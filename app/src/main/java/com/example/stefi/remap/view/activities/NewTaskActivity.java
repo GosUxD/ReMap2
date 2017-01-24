@@ -94,7 +94,7 @@ public class NewTaskActivity extends AppCompatActivity implements
     private Marker pin;
     private Circle geoFenceLimits;
     InputMethodManager inputManager;
-    private int range = 1000;
+    private int range = 100;
     private PendingIntent mGeofencePendingIntent;
 
 
@@ -237,7 +237,7 @@ public class NewTaskActivity extends AppCompatActivity implements
                                 mGoogleApiClient);
                         if (mLastLocation != null) {
                             if (MapReady) {
-                                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude()), 16));
+                                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude()), 15));
                                 mMap.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.defaultMarker(195)).anchor(0.0f, 1.0f)
                                         .position(new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude()))); //Iasi, Romania
                             }
@@ -376,7 +376,7 @@ public class NewTaskActivity extends AppCompatActivity implements
             if (mLastLocation != null) {
                 if (MapReady) {
                     mPinLocation = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
-                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude()), 16));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude()), 15));
                     if (pin != null) {
                         pin.remove();
                     }
